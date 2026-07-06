@@ -12,6 +12,7 @@ import './modes/excel';
 import './modes/marketing';
 import './modes/stock';
 import './modes/report';
+import './modes/designer';
 
 // ── 부트스트랩: 해시 라우팅 + 모드 수명주기 ──────────────────
 const app = document.querySelector<HTMLDivElement>('#app')!;
