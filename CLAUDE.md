@@ -49,7 +49,8 @@ fake-work/
 │   │   ├── launcher.ts        # 그룹웨어 위장 런처 UI
 │   │   └── launcher.css
 │   ├── modes/
-│   │   ├── dev/               # 모드당 폴더 1개: index.ts + style.css + data.ts
+│   │   ├── _shared/           # 여러 모드가 공유하는 셸 (terminal.ts: 맥 터미널 크롬 + lg-* 로그 색상)
+│   │   ├── dev/               # 모드당 폴더 1개: index.ts + data.ts (+ 모드 고유 룩이 있으면 style.css)
 │   │   ├── data-engineer/
 │   │   ├── excel/
 │   │   ├── marketing/
@@ -190,7 +191,7 @@ export const get = (id: string) => modes.get(id);
   - DoD: `npm test` 통과. later()로 만든 타이머가 모드 전환 시 전부 해제됨을 테스트로 검증
 - [x] **Step 2 — 런처 + 라우팅**: 그룹웨어 런처(§6), 해시 라우팅, ESC 복귀, 힌트 토스트
   - DoD: 더미 모드 1개 등록 → 카드 클릭 진입 → ESC 복귀 → 타이머 누수 없음 (콘솔 확인)
-- [ ] **Step 3 — 터미널 계열**: logPusher + hackerTyper 유틸, `dev` / `data-engineer` 모드
+- [x] **Step 3 — 터미널 계열**: logPusher + hackerTyper 유틸, `dev` / `data-engineer` 모드
   - DoD: 로그 400줄 캡 동작, 키 입력 타이핑, 자동 스크롤 유지
 - [ ] **Step 4 — 오피스 계열**: `excel` / `report` 모드
   - DoD: 엑셀 그리드 순환 채움, 보고서 자동 타이핑 완주

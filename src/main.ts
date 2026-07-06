@@ -1,33 +1,13 @@
 import './styles/tokens.css';
 import './styles/base.css';
-import type { Mode, ModeContext } from './core/mode';
-import { get, register } from './core/registry';
+import type { ModeContext } from './core/mode';
+import { get } from './core/registry';
 import { createScheduler } from './core/scheduler';
 import { renderLauncher } from './launcher/launcher';
 
 // ── 모드 등록 (side-effect import) ──────────────────────────
-// Step 3+에서 실제 모드로 대체된다.
-const dummyMode: Mode = {
-  meta: {
-    id: 'dummy',
-    name: '허공 응시 모드',
-    icon: '🫥',
-    description: '아무것도 하지 않지만 무언가 처리 중인 것처럼 보입니다. 코어 검증용 임시 모드.',
-    hint: 'ESC: 업무포털 복귀',
-  },
-  mount(ctx: ModeContext) {
-    ctx.root.style.cssText =
-      'height:100%;display:grid;place-items:center;background:var(--term-bg);color:var(--term-dim);font-family:var(--font-mono)';
-    const p = document.createElement('p');
-    ctx.root.appendChild(p);
-    let n = 0;
-    ctx.later(() => {
-      n++;
-      p.textContent = `processing${'.'.repeat(n % 4)} (${n})`;
-    }, 500, true);
-  },
-};
-register(dummyMode);
+import './modes/dev';
+import './modes/data-engineer';
 
 // ── 부트스트랩: 해시 라우팅 + 모드 수명주기 ──────────────────
 const app = document.querySelector<HTMLDivElement>('#app')!;
