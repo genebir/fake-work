@@ -1,9 +1,76 @@
-// 레퍼런스: https://koreanhc7.cafe24.com/ (모든포장 — 포장지 제조 전문업체)
-// 상품명/가격은 실제 판매 품목 기준, 주문 데이터는 전부 난수.
-export const SHOP_NAME = '모든포장 (koreanhc7)';
+// 레퍼런스: duarltmd.cafe24.com 관리자 대시보드 실물 (2026-07 기준 EC admin)
+// 상품명/가격은 모든포장(koreanhc7) 실제 판매 품목, 주문 데이터는 전부 난수.
+export const SHOP_SELECT = '(기본) 한국어 쇼핑몰';
 
-export const MENUS = ['홈', '주문', '상품', '고객', '게시판', '디자인', '프로모션', '통계', '마켓플러스', '앱스토어'];
-export const ACTIVE_MENU = '주문';
+export interface SideMenu {
+  name: string;
+  icon: string;
+  badge?: 'NEW';
+  divider?: boolean; // 이 항목 앞에 구분선
+}
+
+export const SIDE_MENUS: SideMenu[] = [
+  { name: '홈', icon: '⌂' },
+  { name: '주문', icon: '🛒' },
+  { name: '상품', icon: '👕' },
+  { name: '고객', icon: '👤' },
+  { name: '메시지', icon: '💬', badge: 'NEW' },
+  { name: '게시판', icon: '📄' },
+  { name: '디자인 (PC/모바일)', icon: '🎨' },
+  { name: '프로모션', icon: '％' },
+  { name: '카페24 애널리틱스', icon: '📈', badge: 'NEW' },
+  { name: '통계', icon: '📊' },
+  { name: '통합엑셀', icon: '📗' },
+  { name: '카페24 PRO', icon: '🏅', divider: true },
+  { name: '카페24 글로벌', icon: '🌐', badge: 'NEW' },
+  { name: '카페24 매일배송', icon: '🚚', divider: true },
+  { name: '구글 & 유튜브', icon: 'G' },
+  { name: '마켓플러스', icon: '🏪' },
+  { name: '마케팅', icon: '📣' },
+  { name: '드랍쉬핑', icon: '📦' },
+  { name: '판매 채널', icon: '🔗' },
+  { name: '앱', icon: '🧩' },
+  { name: '부가서비스', icon: '➕' },
+];
+
+export const ACTIVE_MENU = '홈';
+
+/** 오늘의 할 일 칩 — 앞 5개는 일반, 뒤 5개는 빨간 계열 */
+export const TODO_NORMAL = ['입금전', '배송준비중', '배송보류중', '배송대기', '배송중'] as const;
+export const TODO_ALERT = ['취소신청', '교환신청', '반품신청', '환불전', '게시물관리'] as const;
+
+export const DASH_TABS = ['일별 매출 현황', '실시간 접속 현황', '주문처리 현황', '회원/적립금 현황', '예치금 현황', '게시물 현황'];
+
+export const TOP_ADS = [
+  '카카오·네이버 1초 가입으로, 매출까지 378% 상승!',
+  '재고 분석 마케팅으로 광고 순매출 4,695만 → 3.3억',
+  'SMS 지금 충전하면 보너스 10% — 충전은 언제나 옳습니다',
+  '좋아요 봇한테 돈 버리셨나요? 찐 콘텐츠 매출만 100% 추적',
+];
+
+export const NOTICES = [
+  { text: '[중요] 무효 발신번호 메시지 차단 안내', date: '06.25', pin: true },
+  { text: '[신규 출시] 카페24 LLM Router 안내', date: '06.24', pin: true },
+  { text: '[안내] 쇼핑몰 ‘개인정보 처리방침’ 개정', date: '07.06' },
+  { text: '고객발행분 2026년 2분기(04월-06월) 안내', date: '07.01' },
+  { text: '[공지] 카페24페이먼츠 정산자금 지급 일정', date: '07.01' },
+];
+
+export const UPDATES = [
+  { text: '[판매채널] 네이버 쇼핑 DB URL 변경 안내', date: '07.06' },
+  { text: '[디자인] 회원이 쿠폰을 놓치지 않도록 개선', date: '07.01' },
+  { text: '[판매채널] 상품 비디오를 등록해 보세요', date: '07.01' },
+  { text: '[주문] EU 통관 부가세 정책 변경 대응', date: '06.30' },
+  { text: '[마켓플러스] 쿠팡 상품 등록 시 브랜드 검증', date: '06.23' },
+];
+
+export const POPUP = {
+  badge: '뜨거운 호응에 힘입어 다시 열립니다!',
+  title: 'K-포장 이커머스\n혁신 컨퍼런스',
+  sub: '카페24가 전하는 봉투 성장 전략',
+  info: '일시 | 2026.7.14(화) 13:30 - 16:30\n장소 | 여의도 FKI플라자 1F 그랜드볼룸',
+  free: '참가비\n전액 무료',
+};
 
 export const PRODUCTS = [
   { name: 'opp접착봉투 5×8+4cm (1,000장)', price: 7260 },
@@ -30,28 +97,6 @@ export const PRODUCTS = [
   { name: '부직포 복주머니 (50장)', price: 25500 },
   { name: '알루미늄 스파우트 스탠드 봉투 500g (1박스 700개)', price: 229000 },
 ];
-
-// B2B몰답게 개인 + 사업자 혼합
-export const BUYERS = [
-  '김*진',
-  '이*은',
-  '(주)달*식품',
-  '카페 *뜰',
-  '베이커리 *숲',
-  '정*호',
-  '*팜 농산',
-  '(주)한*유통',
-  '박*수',
-  '스마트스토어 *리빙',
-  '반찬가게 *손맛',
-  '최*아',
-];
-
-// 무통장입금 비중이 높은 게 B2B 현실 (가중치용 중복)
-export const PAY_METHODS = ['신용카드', '무통장입금', '무통장입금', '카카오페이', '네이버페이', '토스페이'];
-
-/** 주문 상태 전이 순서 */
-export const ORDER_FLOW = ['입금전', '배송준비중', '배송중', '배송완료'] as const;
 
 export const INQUIRIES = [
   '커피봉투에 로고 인쇄 가능한가요? (500장 기준)',
