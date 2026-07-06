@@ -1,0 +1,67 @@
+/* 리셋 + 공통 컴포넌트 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--gw-text);
+  background: var(--gw-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  height: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* 힌트 토스트: 모드 진입 시 4초 표시 후 페이드아웃 */
+.hint-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 10px 18px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: hint-fade 4s ease forwards;
+}
+
+@keyframes hint-fade {
+  0% { opacity: 0; transform: translate(-50%, 8px); }
+  8% { opacity: 1; transform: translate(-50%, 0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* 워크스크린 공통 우상단 실시간 시계 */
+.work-clock {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hint-toast {
+    animation-duration: 0.01s;
+    animation-delay: 4s;
+    opacity: 1;
+  }
+}

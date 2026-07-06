@@ -1,0 +1,23 @@
+:root {
+  /* 그룹웨어 (런처) */
+  --gw-navy: #2b4c7e;
+  --gw-blue: #1b5faa;
+  --gw-bg: #eef1f5;
+  --gw-border: #c8d1dc;
+  --gw-text: #2c3440;
+  --gw-sub: #6b7684;
+  /* 터미널 */
+  --term-bg: #0d1117;
+  --term-text: #c9d1d9;
+  --term-ok: #3fb950;
+  --term-warn: #d29922;
+  --term-err: #f85149;
+  --term-info: #58a6ff;
+  --term-dim: #8b949e;
+  /* 시장 색상 (한국 관례) */
+  --up: #d60000;
+  --down: #0051c7;
+  /* 폰트 */
+  --font-sans: "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", sans-serif;
+  --font-mono: "D2Coding", Consolas, Menlo, monospace;
+}
