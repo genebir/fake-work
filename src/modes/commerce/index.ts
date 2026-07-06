@@ -2,7 +2,7 @@ import './style.css';
 import type { Mode, ModeContext } from '../../core/mode';
 import { register } from '../../core/registry';
 import { comma, nowClock, pick, ri } from '../../core/utils';
-import { ACTIVE_MENU, BUYERS, MENUS, ORDER_FLOW, PAY_METHODS, PRODUCTS, SHOP_NAME } from './data';
+import { ACTIVE_MENU, BUYERS, INQUIRIES, MENUS, ORDER_FLOW, PAY_METHODS, PRODUCTS, SHOP_NAME } from './data';
 
 type OrderStatus = (typeof ORDER_FLOW)[number];
 
@@ -27,7 +27,7 @@ function build(ctx: ModeContext) {
     <header class="cm-top">
       <b class="cm-logo">cafe24</b>
       <span class="cm-shop"></span>
-      <span class="cm-bell">🔔<i class="cm-badge">0</i></span>
+      <span class="cm-bell">🔔<i class="cm-badge">0</i><span class="cm-noti" hidden></span></span>
       <span class="cm-plan">PRO</span>
       <span class="cm-clock work-clock"></span>
     </header>
@@ -134,7 +134,7 @@ const commerceMode: Mode = {
 
     const addOrder = (flash: boolean, status?: OrderStatus) => {
       const p = pick(PRODUCTS);
-      const qty = Math.random() < 0.2 ? ri(2, 3) : 1;
+      const qty = Math.random() < 0.4 ? ri(2, 5) : 1; // 포장재는 묶음 구매가 흔하다
       const amount = p.price * qty;
       const pay = pick(PAY_METHODS);
       const o: Order = {
@@ -148,7 +148,7 @@ const commerceMode: Mode = {
         <td class="cm-amt">${comma(amount)}원</td>
         <td><span class="cm-pill"></span></td>
       `;
-      o.tr.children[1].textContent = p.name + (qty > 1 ? ` 외 (${qty}개)` : '');
+      o.tr.children[1].textContent = p.name + (qty > 1 ? ` × ${qty}` : '');
       o.tr.children[2].textContent = pick(BUYERS);
       o.tr.children[3].textContent = pay;
       paintStatus(o);
@@ -197,12 +197,19 @@ const commerceMode: Mode = {
       refreshCards();
     }, 1500, true);
 
-    // 미답변 문의 증감 (7초) — 벨 배지
+    // 미답변 문의 증감 (7초) — 벨 배지 + 새 문의 미니 알림
+    const noti = el.querySelector<HTMLElement>('.cm-noti')!;
     badge.textContent = String(inquiries);
     ctx.later(() => {
-      inquiries = Math.max(0, inquiries + (Math.random() < 0.6 ? 1 : -1));
+      const incoming = Math.random() < 0.6;
+      inquiries = Math.max(0, inquiries + (incoming ? 1 : -1));
       badge.textContent = String(inquiries);
       badge.classList.toggle('cm-badge-hot', inquiries >= 5);
+      if (incoming) {
+        noti.textContent = `새 문의: ${pick(INQUIRIES)}`;
+        noti.hidden = false;
+        ctx.later(() => (noti.hidden = true), 3500);
+      }
     }, 7000, true);
 
     // 아주 가끔 취소가 나야 리얼하다 (18초)

@@ -66,6 +66,36 @@
   animation: cm-pulse 1s ease infinite;
 }
 
+/* 새 문의 미니 알림 (벨 아래 드롭) */
+.cm-noti {
+  position: absolute;
+  top: 26px;
+  right: -8px;
+  z-index: 20;
+  width: max-content;
+  max-width: 340px;
+  background: #26313d;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 7px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cm-noti::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: 12px;
+  border: 4px solid transparent;
+  border-bottom-color: #26313d;
+  border-top: none;
+}
+
 @keyframes cm-pulse {
   50% { transform: scale(1.25); }
 }
