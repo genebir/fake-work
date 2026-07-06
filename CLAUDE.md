@@ -195,7 +195,7 @@ export const get = (id: string) => modes.get(id);
   - DoD: 로그 400줄 캡 동작, 키 입력 타이핑, 자동 스크롤 유지
 - [x] **Step 4 — 오피스 계열**: `excel` / `report` 모드
   - DoD: 엑셀 그리드 순환 채움, 보고서 자동 타이핑 완주
-- [ ] **Step 5 — 대시보드 계열**: `marketing` / `stock` 모드
+- [x] **Step 5 — 대시보드 계열**: `marketing` / `stock` 모드
   - DoD: 차트 리사이즈 대응, 종목 플래시 정상 동작
 - [ ] **Step 6 — 폴리시**: 반응형(모바일에서 런처만이라도 정상), prefers-reduced-motion 대응, README 작성, GH Pages 배포 확인
   - DoD: Lighthouse 접근성 90+, 실배포 URL에서 전 모드 동작

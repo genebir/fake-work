@@ -1,0 +1,138 @@
+.mk {
+  /* 모드 고유 색 (밝은 SaaS) */
+  --mk-bg: #f6f8fb;
+  --mk-card: #ffffff;
+  --mk-border: #e3e8ef;
+  --mk-ink: #1d2733;
+  --mk-sub: #7a8699;
+  --mk-accent: #1b5faa;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 22px;
+  background: var(--mk-bg);
+  color: var(--mk-ink);
+  font-family: var(--font-sans);
+  overflow-y: auto;
+}
+
+.mk-top {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mk-title {
+  font-size: 17px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.mk-live {
+  color: #d6293e;
+  font-size: 12px;
+  font-weight: 700;
+  animation: mk-blink 1.6s ease infinite;
+}
+
+@keyframes mk-blink {
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mk-live { animation: none; }
+}
+
+.mk-clock {
+  color: var(--mk-sub);
+  font-size: 13px;
+}
+
+.mk-kpis {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.mk-card {
+  background: var(--mk-card);
+  border: 1px solid var(--mk-border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(29, 39, 51, 0.05);
+}
+
+.mk-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.mk-card-label {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.mk-card-sub {
+  color: var(--mk-sub);
+  font-size: 11px;
+}
+
+.mk-card-value {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.mk-card-value b {
+  font-size: 26px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+}
+
+.mk-arrow {
+  font-style: normal;
+  font-size: 13px;
+}
+
+/* 등락 화살표 — 한국 관례 */
+.mk-up { color: var(--up); }
+.mk-down { color: var(--down); }
+
+.mk-chart-card {
+  flex: 1;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  background: var(--mk-card);
+  border: 1px solid var(--mk-border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 2px rgba(29, 39, 51, 0.05);
+}
+
+.mk-chart-label {
+  flex: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--mk-sub);
+  margin-bottom: 10px;
+}
+
+.mk-chart-wrap {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+.mk-chart-wrap canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

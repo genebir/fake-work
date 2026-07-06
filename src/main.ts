@@ -9,6 +9,8 @@ import { renderLauncher } from './launcher/launcher';
 import './modes/dev';
 import './modes/data-engineer';
 import './modes/excel';
+import './modes/marketing';
+import './modes/stock';
 import './modes/report';
 
 // ── 부트스트랩: 해시 라우팅 + 모드 수명주기 ──────────────────
