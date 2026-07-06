@@ -8,40 +8,82 @@
   font-size: 13px;
 }
 
+/* Windows Terminal 탭 바 */
 .term-bar {
   flex: none;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
-  background: #161b22;
-  border-bottom: 1px solid #21262d;
+  align-items: stretch;
+  gap: 6px;
+  padding: 6px 0 0 8px;
+  background: #1a1d21;
 }
 
-.term-dots i {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 6px;
+.term-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 380px;
+  padding: 5px 10px 6px;
+  background: var(--term-bg);
+  border-radius: 6px 6px 0 0;
+  border: 1px solid #21262d;
+  border-bottom: none;
 }
-.term-dots i:nth-child(1) { background: #ff5f56; }
-.term-dots i:nth-child(2) { background: #ffbd2e; }
-.term-dots i:nth-child(3) { background: #27c93f; }
+
+.term-tab-icon {
+  color: var(--term-dim);
+  font-size: 10px;
+  letter-spacing: -1px;
+}
 
 .term-title {
-  flex: 1;
-  text-align: center;
-  color: var(--term-dim);
+  color: var(--term-text);
   font-size: 12px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
+.term-tab-x,
+.term-newtab {
+  color: var(--term-dim);
+  font-size: 11px;
+  align-self: center;
+}
+
+.term-newtab {
+  font-size: 15px;
+  padding: 0 6px;
+}
+
+.term-spacer {
+  flex: 1;
+}
+
 .term-clock {
+  align-self: center;
   color: var(--term-dim);
   font-size: 12px;
+}
+
+/* 우측 창 버튼 ─ □ ✕ */
+.term-winbtns {
+  display: flex;
+  align-self: flex-start;
+}
+
+.term-winbtns i {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 30px;
+  color: #9aa4ae;
+  font-size: 11px;
+  font-style: normal;
+}
+
+.term-winbtns .term-close {
+  color: #c2c9d0;
 }
 
 .term-log {

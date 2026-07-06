@@ -13,7 +13,7 @@ const devMode: Mode = {
     hint: 'ESC: 복귀 · 아무 키: 코드 타이핑',
   },
   mount(ctx) {
-    const term = buildTerminal(ctx, 'giseung@prod-svc: ~/workspace/settlement-api — zsh');
+    const term = buildTerminal(ctx, 'giseung@prod-svc: ~/workspace/settlement-api — WSL: Ubuntu');
     logPusher(term.logEl, DEV_LOGS, 350, 1400, ctx);
     const type = hackerTyper(term.typerEl, PY_SOURCE, ctx);
     ctx.onKey((e) => {

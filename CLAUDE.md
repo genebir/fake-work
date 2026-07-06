@@ -49,7 +49,7 @@ fake-work/
 │   │   ├── launcher.ts        # 그룹웨어 위장 런처 UI
 │   │   └── launcher.css
 │   ├── modes/
-│   │   ├── _shared/           # 여러 모드가 공유하는 셸 (terminal.ts: 맥 터미널 크롬 + lg-* 로그 색상)
+│   │   ├── _shared/           # 여러 모드가 공유하는 셸 (terminal.ts: Windows Terminal 크롬 + lg-* 로그 색상)
 │   │   ├── dev/               # 모드당 폴더 1개: index.ts + data.ts (+ 모드 고유 룩이 있으면 style.css)
 │   │   ├── data-engineer/
 │   │   ├── excel/
@@ -138,7 +138,7 @@ export const get = (id: string) => modes.get(id);
 ## 7. 모드별 상세 스펙
 
 ### 7.1 `dev` — 개발자 모드
-- **화면**: macOS 스타일 터미널 (신호등 3개, 타이틀 `giseung@prod-svc: ~/workspace/...`), 다크 (`#0d1117`)
+- **화면**: Windows Terminal 스타일 (탭 바 + 우측 ─ ▢ ✕ 창 버튼, 탭 타이틀 `giseung@prod-svc: ~/workspace/... — WSL: Ubuntu`), 다크 (`#0d1117`)
 - **자동**: npm build / vitest / git rebase / docker compose / kubectl logs 가 섞인 로그 스트림 (0.35~1.4초 간격). WARN을 10~15% 섞어야 리얼함
 - **인터랙션**: 아무 키 → 해커타이퍼. 소스는 실제로 동작할 법한 Python 함수 (정산 배치 처리 등 30줄 내외)
 - **디테일**: 로그 안 타임스탬프는 실제 현재 시각
