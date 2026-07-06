@@ -13,6 +13,9 @@ import './modes/marketing';
 import './modes/stock';
 import './modes/report';
 import './modes/designer';
+import './modes/cs';
+import './modes/pm';
+import './modes/research';
 
 // ── 부트스트랩: 해시 라우팅 + 모드 수명주기 ──────────────────
 const app = document.querySelector<HTMLDivElement>('#app')!;

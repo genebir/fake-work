@@ -1,0 +1,114 @@
+.rs {
+  /* 모드 고유 색 (PDF 뷰어) */
+  --rs-bar: #323639;
+  --rs-bg: #525659;
+  --rs-hl-y: #fff3a3;
+  --rs-hl-g: #c9f2c9;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+  font-size: 12px;
+}
+
+.rs-top {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--rs-bar);
+  color: #d5d5d5;
+  padding: 9px 14px;
+}
+
+.rs-file {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rs-page-ind,
+.rs-zoom {
+  color: #a5a9ad;
+  font-variant-numeric: tabular-nums;
+}
+
+.rs-clock {
+  color: #a5a9ad;
+}
+
+.rs-canvas {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--rs-bg);
+  padding: 26px 12px;
+  scroll-behavior: smooth;
+}
+
+.rs-paper {
+  position: relative;
+  width: min(820px, 100%);
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  padding: 72px 88px 96px;
+  font-family: 'Batang', '바탕', 'Noto Serif KR', serif;
+  font-size: 14px;
+  line-height: 2.0;
+  color: #191919;
+  text-align: justify;
+  word-break: keep-all;
+}
+
+.rs-title {
+  font-size: 19px;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.rs-authors {
+  text-align: center;
+  color: #555;
+  font-size: 12px;
+  margin-bottom: 34px;
+}
+
+.rs-paper h2 {
+  font-size: 15px;
+  margin: 26px 0 8px;
+}
+
+.rs-paper p {
+  margin-bottom: 8px;
+}
+
+.rs-s {
+  border-radius: 2px;
+  transition: background 0.5s ease;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.hl-y { background: var(--rs-hl-y); }
+.hl-g { background: var(--rs-hl-g); }
+
+.rs-note {
+  position: absolute;
+  right: 10px;
+  width: 66px;
+  background: #ffef99;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  line-height: 1.4;
+  padding: 5px 6px;
+  color: #5b4a00;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rs-canvas { scroll-behavior: auto; }
+  .rs-s { transition: none; }
+}
