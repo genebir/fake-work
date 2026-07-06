@@ -184,9 +184,9 @@ export const get = (id: string) => modes.get(id);
 각 Step 완료 시 커밋 1개 이상. 커밋 메시지는 `feat(step-N): ...` 형식.
 **Step을 건너뛰지 말 것. 각 Step의 완료 조건(DoD)을 만족한 뒤 다음으로 진행.**
 
-- [ ] **Step 0 — 스캐폴딩**: Vite + TS 프로젝트 생성, 디렉토리 구조(§3) 생성, tokens.css에 전역 변수 정의, GH Actions 배포 워크플로 작성
+- [x] **Step 0 — 스캐폴딩**: Vite + TS 프로젝트 생성, 디렉토리 구조(§3) 생성, tokens.css에 전역 변수 정의, GH Actions 배포 워크플로 작성
   - DoD: `npm run dev` 동작, 빈 페이지에 "fake-work" 렌더
-- [ ] **Step 1 — 코어**: mode.ts / registry.ts / scheduler.ts / utils.ts 구현 + utils 단위 테스트
+- [x] **Step 1 — 코어**: mode.ts / registry.ts / scheduler.ts / utils.ts 구현 + utils 단위 테스트
   - DoD: `npm test` 통과. later()로 만든 타이머가 모드 전환 시 전부 해제됨을 테스트로 검증
 - [ ] **Step 2 — 런처 + 라우팅**: 그룹웨어 런처(§6), 해시 라우팅, ESC 복귀, 힌트 토스트
   - DoD: 더미 모드 1개 등록 → 카드 클릭 진입 → ESC 복귀 → 타이머 누수 없음 (콘솔 확인)
