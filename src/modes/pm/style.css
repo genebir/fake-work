@@ -1,0 +1,159 @@
+.pm {
+  /* 모드 고유 색 (Jira풍) */
+  --pm-bg: #f4f5f7;
+  --pm-col: #ebecf0;
+  --pm-ink: #172b4d;
+  --pm-sub: #6b778c;
+  --pm-blue: #0052cc;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: var(--pm-ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+}
+
+.pm-top {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-bottom: 1px solid #dfe1e6;
+}
+
+.pm-top b {
+  font-size: 15px;
+}
+
+.pm-sprint {
+  flex: 1;
+  color: var(--pm-sub);
+  font-size: 12px;
+}
+
+.pm-avatars {
+  display: flex;
+}
+
+.pm-avatars i,
+.pm-ava {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: #fff;
+  font-style: normal;
+  font-size: 11px;
+  border: 2px solid #fff;
+}
+.pm-avatars i + i {
+  margin-left: -7px;
+}
+
+.pm-clock {
+  color: var(--pm-sub);
+  font-size: 12px;
+}
+
+.pm-board {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--pm-bg);
+  overflow-x: auto;
+}
+
+.pm-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  background: var(--pm-col);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.pm-col h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--pm-sub);
+  text-transform: uppercase;
+  padding: 4px 6px 8px;
+}
+
+.pm-count {
+  font-style: normal;
+  background: #dfe1e6;
+  border-radius: 8px;
+  padding: 0 7px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pm-cards {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.pm-card {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(9, 30, 66, 0.2);
+  padding: 9px 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.pm-card-title {
+  font-size: 12.5px;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.pm-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pm-key {
+  color: var(--pm-sub);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pm-pt {
+  background: #dfe1e6;
+  border-radius: 8px;
+  font-size: 10px;
+  padding: 1px 7px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pm-ava {
+  margin-left: auto;
+  width: 22px;
+  height: 22px;
+  font-size: 10px;
+  border: none;
+}
+
+.pm-moved {
+  box-shadow: 0 0 0 2px var(--pm-blue), 0 4px 10px rgba(9, 30, 66, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pm-card {
+    transition: none;
+  }
+}
