@@ -1,0 +1,206 @@
+/* 2010년대 사내 인트라넷 감성. 예쁘면 안 된다 — 촌스러움이 곧 위장. */
+.gw {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--gw-bg);
+  font-size: 13px;
+}
+
+.gw-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+  height: 44px;
+  background: var(--gw-navy);
+  color: #fff;
+  border-bottom: 3px solid var(--gw-blue);
+}
+
+.gw-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.gw-logo {
+  color: #ffd75e;
+}
+
+.gw-ver {
+  font-size: 11px;
+  color: #b8c6da;
+}
+
+.gw-user {
+  font-size: 12px;
+  color: #dfe7f1;
+  white-space: nowrap;
+}
+
+.gw-ontime {
+  color: #9fe0a8;
+  font-weight: normal;
+}
+
+.gw-sep {
+  margin: 0 6px;
+  color: #5a749b;
+}
+
+.gw-logout {
+  background: none;
+  border: 1px solid #5a749b;
+  color: #dfe7f1;
+  font-size: 11px;
+  padding: 2px 8px;
+}
+.gw-logout:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.gw-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: #fffbe8;
+  border-bottom: 1px solid var(--gw-border);
+  color: #6d5c1e;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.gw-notice-badge {
+  flex: none;
+  background: #c8412f;
+  color: #fff;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+
+.gw-notice-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gw-main {
+  flex: 1;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+.gw-title {
+  font-size: 18px;
+  color: var(--gw-navy);
+  border-left: 4px solid var(--gw-blue);
+  padding-left: 10px;
+  margin-bottom: 6px;
+}
+
+.gw-desc {
+  color: var(--gw-sub);
+  margin-bottom: 20px;
+}
+
+.gw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.gw-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid var(--gw-border);
+  border-radius: 0; /* 각진 카드 */
+  color: var(--gw-text);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.gw-card:hover,
+.gw-card:focus-visible {
+  border-color: var(--gw-blue);
+  outline: 2px solid var(--gw-blue);
+  outline-offset: -2px;
+}
+
+.gw-card-icon {
+  flex: none;
+  font-size: 26px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--gw-bg);
+  border: 1px solid var(--gw-border);
+}
+
+.gw-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.gw-card-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.gw-card-desc {
+  color: var(--gw-sub);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.gw-card-go {
+  flex: none;
+  margin-left: auto;
+  align-self: center;
+  font-size: 11px;
+  color: var(--gw-blue);
+  border: 1px solid var(--gw-blue);
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+
+.gw-empty {
+  color: var(--gw-sub);
+  padding: 24px;
+  text-align: center;
+  border: 1px dashed var(--gw-border);
+  grid-column: 1 / -1;
+}
+
+.gw-footer {
+  padding: 14px 20px 20px;
+  border-top: 1px solid var(--gw-border);
+  color: var(--gw-sub);
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.gw-footer kbd {
+  font-family: var(--font-mono);
+  background: #fff;
+  border: 1px solid var(--gw-border);
+  border-radius: 2px;
+  padding: 0 4px;
+}
+
+.gw-copy {
+  color: #9aa5b1;
+}

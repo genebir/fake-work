@@ -188,7 +188,7 @@ export const get = (id: string) => modes.get(id);
   - DoD: `npm run dev` 동작, 빈 페이지에 "fake-work" 렌더
 - [x] **Step 1 — 코어**: mode.ts / registry.ts / scheduler.ts / utils.ts 구현 + utils 단위 테스트
   - DoD: `npm test` 통과. later()로 만든 타이머가 모드 전환 시 전부 해제됨을 테스트로 검증
-- [ ] **Step 2 — 런처 + 라우팅**: 그룹웨어 런처(§6), 해시 라우팅, ESC 복귀, 힌트 토스트
+- [x] **Step 2 — 런처 + 라우팅**: 그룹웨어 런처(§6), 해시 라우팅, ESC 복귀, 힌트 토스트
   - DoD: 더미 모드 1개 등록 → 카드 클릭 진입 → ESC 복귀 → 타이머 누수 없음 (콘솔 확인)
 - [ ] **Step 3 — 터미널 계열**: logPusher + hackerTyper 유틸, `dev` / `data-engineer` 모드
   - DoD: 로그 400줄 캡 동작, 키 입력 타이핑, 자동 스크롤 유지
