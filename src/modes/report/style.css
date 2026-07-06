@@ -1,0 +1,135 @@
+.doc {
+  /* 모드 고유 색 (Word 파랑) */
+  --doc-blue: #2b579a;
+  --doc-blue-dark: #24487f;
+  --doc-bg: #808080;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  background: var(--doc-bg);
+}
+
+.doc-toolbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--doc-blue);
+  color: #fff;
+  padding: 6px 12px;
+}
+
+.doc-save {
+  font-size: 11px;
+  color: #cfdcf3;
+}
+.doc-save i {
+  font-style: normal;
+  color: #8fd19e;
+}
+
+.doc-name {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doc-clock {
+  font-size: 12px;
+  color: #cfdcf3;
+}
+
+.doc-menu {
+  flex: none;
+  display: flex;
+  gap: 2px;
+  background: var(--doc-blue-dark);
+  padding: 0 8px;
+}
+
+.doc-menu span {
+  color: #cfdcf3;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.doc-menu span.on {
+  background: #fff;
+  color: var(--doc-blue);
+  font-weight: bold;
+}
+
+.doc-canvas {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 12px;
+}
+
+.doc-page {
+  width: min(794px, 100%); /* A4 @96dpi */
+  min-height: 1123px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  padding: 76px 72px;
+  font-family: 'Batang', '바탕', 'Noto Serif KR', serif;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #111;
+}
+
+.doc-title {
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.doc-meta {
+  text-align: center;
+  color: #555;
+  font-size: 12px;
+  margin-bottom: 28px;
+}
+
+.doc-h {
+  font-weight: bold;
+  font-size: 15px;
+  margin: 22px 0 6px;
+}
+
+.doc-li {
+  padding-left: 14px;
+  margin: 2px 0;
+}
+
+.doc-attach {
+  margin-top: 30px;
+  border-top: 1px solid #999;
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+.doc-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: #222;
+  vertical-align: text-bottom;
+  margin-left: 1px;
+}
+
+.doc-status {
+  flex: none;
+  display: flex;
+  justify-content: space-between;
+  background: var(--doc-blue);
+  color: #cfdcf3;
+  font-size: 11px;
+  padding: 3px 12px;
+}

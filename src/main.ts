@@ -8,6 +8,8 @@ import { renderLauncher } from './launcher/launcher';
 // ── 모드 등록 (side-effect import) ──────────────────────────
 import './modes/dev';
 import './modes/data-engineer';
+import './modes/excel';
+import './modes/report';
 
 // ── 부트스트랩: 해시 라우팅 + 모드 수명주기 ──────────────────
 const app = document.querySelector<HTMLDivElement>('#app')!;
