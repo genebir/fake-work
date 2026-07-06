@@ -33,14 +33,14 @@ export function renderLauncher(container: HTMLElement, sched: Scheduler): void {
         <span class="gw-sep">|</span> <button type="button" class="gw-logout">로그아웃</button>
       </div>
     </header>
-    <div class="gw-notice">
+    <section class="gw-notice" aria-label="공지사항">
       <span class="gw-notice-badge">공지</span>
       <span class="gw-notice-text" aria-live="polite"></span>
-    </div>
+    </section>
     <main class="gw-main">
       <h1 class="gw-title">업무 시뮬레이션 선택</h1>
       <p class="gw-desc">수행할 업무 유형을 선택하십시오. 선택 즉시 해당 업무가 자동으로 진행됩니다.</p>
-      <div class="gw-grid" role="list"></div>
+      <div class="gw-grid"></div>
     </main>
     <footer class="gw-footer">
       <p>본 시스템은 실제 업무 성과를 생성하지 않습니다. 성과에 대한 책임은 전적으로 사용자에게 있습니다.</p>
@@ -55,7 +55,6 @@ export function renderLauncher(container: HTMLElement, sched: Scheduler): void {
     const card = document.createElement('button');
     card.type = 'button';
     card.className = 'gw-card';
-    card.setAttribute('role', 'listitem');
     card.innerHTML = `
       <span class="gw-card-icon" aria-hidden="true"></span>
       <span class="gw-card-body">

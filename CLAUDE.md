@@ -197,7 +197,7 @@ export const get = (id: string) => modes.get(id);
   - DoD: 엑셀 그리드 순환 채움, 보고서 자동 타이핑 완주
 - [x] **Step 5 — 대시보드 계열**: `marketing` / `stock` 모드
   - DoD: 차트 리사이즈 대응, 종목 플래시 정상 동작
-- [ ] **Step 6 — 폴리시**: 반응형(모바일에서 런처만이라도 정상), prefers-reduced-motion 대응, README 작성, GH Pages 배포 확인
+- [x] **Step 6 — 폴리시**: 반응형(모바일에서 런처만이라도 정상), prefers-reduced-motion 대응, README 작성, GH Pages 배포 확인
   - DoD: Lighthouse 접근성 90+, 실배포 URL에서 전 모드 동작
 
 ## 9. 작업 지침 (Claude Code용)
@@ -234,7 +234,7 @@ export const get = (id: string) => modes.get(id);
   --gw-bg: #eef1f5;
   --gw-border: #c8d1dc;
   --gw-text: #2c3440;
-  --gw-sub: #6b7684;
+  --gw-sub: #57616e;
   /* 터미널 */
   --term-bg: #0d1117;
   --term-text: #c9d1d9;

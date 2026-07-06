@@ -19,6 +19,10 @@ export const nowClock = (): string => {
   return `${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
 };
 
+/** prefers-reduced-motion — JS로 만드는 깜빡임 효과는 이 값으로 완화한다 (SSR/테스트 환경 가드 포함) */
+export const prefersReducedMotion = (): boolean =>
+  typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /** logPusher 라인: [cssClass, text]. 클래스: lg-ok lg-warn lg-err lg-info lg-dim */
 export type LogLine = readonly [cls: string, text: string];
 
@@ -67,9 +71,11 @@ export function hackerTyper(
   cursor.textContent = '▋';
   el.append(text, cursor);
 
-  ctx.later(() => {
-    cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
-  }, 530, true);
+  if (!prefersReducedMotion()) {
+    ctx.later(() => {
+      cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
+    }, 530, true);
+  }
 
   return () => {
     const n = ri(2, 4);

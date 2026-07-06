@@ -1,7 +1,7 @@
 import './style.css';
 import type { Mode, ModeContext } from '../../core/mode';
 import { register } from '../../core/registry';
-import { nowClock, ri } from '../../core/utils';
+import { nowClock, prefersReducedMotion, ri } from '../../core/utils';
 import { DOC_BLOCKS, DOC_NAME } from './data';
 
 function buildDoc(ctx: ModeContext) {
@@ -51,9 +51,11 @@ const reportMode: Mode = {
 
     const cursor = document.createElement('span');
     cursor.className = 'doc-cursor';
-    ctx.later(() => {
-      cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
-    }, 530, true);
+    if (!prefersReducedMotion()) {
+      ctx.later(() => {
+        cursor.style.visibility = cursor.style.visibility === 'hidden' ? 'visible' : 'hidden';
+      }, 530, true);
+    }
 
     let block = 0;
     let pos = 0;

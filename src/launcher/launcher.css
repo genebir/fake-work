@@ -202,5 +202,23 @@
 }
 
 .gw-copy {
-  color: #9aa5b1;
+  color: var(--gw-sub);
+}
+
+/* 모바일: 런처만이라도 정상 동작 */
+@media (max-width: 720px) {
+  .gw-topbar {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+  }
+  .gw-ver {
+    display: none;
+  }
+  .gw-main {
+    padding: 20px 14px 32px;
+  }
+  .gw-grid {
+    grid-template-columns: 1fr;
+  }
 }
