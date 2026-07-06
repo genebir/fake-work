@@ -1,0 +1,143 @@
+.cs {
+  /* 모드 고유 색 (헬프데스크 다크틸) */
+  --cs-teal: #03363d;
+  --cs-bg: #f4f6f8;
+  --cs-border: #d8dcde;
+  --cs-ink: #2f3941;
+  --cs-sub: #68737d;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--cs-bg);
+  color: var(--cs-ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+}
+
+.cs-top {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--cs-teal);
+  color: #fff;
+  padding: 10px 16px;
+}
+
+.cs-top b {
+  font-size: 14px;
+}
+
+.cs-queue {
+  flex: 1;
+  color: #b8d2d6;
+  font-size: 12px;
+}
+
+.cs-clock {
+  color: #b8d2d6;
+  font-size: 12px;
+}
+
+.cs-stats {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 14px 16px 6px;
+}
+
+.cs-stat {
+  background: #fff;
+  border: 1px solid var(--cs-border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cs-stat i {
+  font-style: normal;
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.cs-stat span {
+  color: var(--cs-sub);
+  font-size: 11px;
+}
+
+.cs-table-wrap {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 16px 16px;
+}
+
+.cs-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--cs-border);
+}
+
+.cs-table th {
+  position: sticky;
+  top: 0;
+  background: #f8f9f9;
+  color: var(--cs-sub);
+  font-weight: 600;
+  font-size: 11px;
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--cs-border);
+}
+
+.cs-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ebeef0;
+  white-space: nowrap;
+}
+
+.cs-subject {
+  max-width: 0;
+  width: 55%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cs-no {
+  color: var(--cs-sub);
+  font-variant-numeric: tabular-nums;
+}
+
+.cs-elapsed {
+  color: var(--cs-sub);
+  font-variant-numeric: tabular-nums;
+}
+
+.cs-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+.cs-waiting { background: #fff0f0; color: #c0392b; }
+.cs-progress { background: #fff8e1; color: #9a7b12; }
+.cs-done { background: #e8f5ec; color: #1e7b43; }
+
+.cs-new {
+  animation: cs-flash 0.9s ease;
+}
+
+@keyframes cs-flash {
+  0% { background: #fff8d6; }
+  100% { background: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-new { animation: none; }
+}
