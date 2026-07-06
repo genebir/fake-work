@@ -1,0 +1,278 @@
+.cm {
+  /* 모드 고유 색 (Cafe24풍) */
+  --cm-blue: #2d6ff2;
+  --cm-side: #232f3e;
+  --cm-bg: #f5f7fa;
+  --cm-border: #dfe4ea;
+  --cm-ink: #26313d;
+  --cm-sub: #74808f;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--cm-bg);
+  color: var(--cm-ink);
+  font-family: var(--font-sans);
+  font-size: 13px;
+}
+
+.cm-top {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-bottom: 1px solid var(--cm-border);
+  padding: 10px 16px;
+}
+
+.cm-logo {
+  color: var(--cm-blue);
+  font-size: 17px;
+  letter-spacing: -0.5px;
+}
+
+.cm-shop {
+  flex: 1;
+  color: var(--cm-sub);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cm-bell {
+  position: relative;
+  font-size: 14px;
+}
+
+.cm-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #e5484d;
+  color: #fff;
+  font-style: normal;
+  font-size: 9px;
+  min-width: 15px;
+  height: 15px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  padding: 0 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cm-badge-hot {
+  animation: cm-pulse 1s ease infinite;
+}
+
+@keyframes cm-pulse {
+  50% { transform: scale(1.25); }
+}
+
+.cm-plan {
+  background: var(--cm-blue);
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.cm-clock {
+  color: var(--cm-sub);
+  font-size: 12px;
+}
+
+.cm-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+}
+
+.cm-side {
+  flex: none;
+  width: 150px;
+  background: var(--cm-side);
+  overflow-y: auto;
+}
+
+.cm-side ul {
+  list-style: none;
+  padding: 8px 0;
+}
+
+.cm-side li {
+  color: #aeb9c5;
+  padding: 9px 18px;
+  font-size: 12.5px;
+}
+
+.cm-side li.on {
+  background: var(--cm-blue);
+  color: #fff;
+  font-weight: 600;
+}
+
+.cm-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 20px;
+  overflow-y: auto;
+}
+
+.cm-main h1 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.cm-main h2 {
+  font-size: 13px;
+  margin: 16px 0 8px;
+}
+
+.cm-live-dot {
+  color: #e5484d;
+  font-style: normal;
+  font-size: 10px;
+  animation: cm-blink 1.6s ease infinite;
+}
+
+@keyframes cm-blink {
+  50% { opacity: 0.3; }
+}
+
+.cm-chips {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.cm-chip {
+  background: #fff;
+  border: 1px solid var(--cm-border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.cm-chip i {
+  display: block;
+  font-style: normal;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--cm-blue);
+  font-variant-numeric: tabular-nums;
+}
+
+.cm-chip span {
+  color: var(--cm-sub);
+  font-size: 11px;
+}
+
+.cm-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cm-card {
+  background: #fff;
+  border: 1px solid var(--cm-border);
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+
+.cm-card span {
+  color: var(--cm-sub);
+  font-size: 11px;
+}
+
+.cm-card i {
+  display: block;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.cm-table-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--cm-border);
+}
+
+.cm-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cm-table th {
+  position: sticky;
+  top: 0;
+  background: #f8fafc;
+  color: var(--cm-sub);
+  font-weight: 600;
+  font-size: 11px;
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--cm-border);
+}
+
+.cm-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eef1f5;
+  white-space: nowrap;
+}
+
+.cm-no {
+  color: var(--cm-sub);
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+}
+
+.cm-prod {
+  max-width: 0;
+  width: 42%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cm-amt {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.cm-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+.cm-s0 { background: #fff0f0; color: #c0392b; }  /* 입금전 */
+.cm-s1 { background: #fff8e1; color: #9a7b12; }  /* 배송준비중 */
+.cm-s2 { background: #e8f0fe; color: #1d5dcb; }  /* 배송중 */
+.cm-s3 { background: #e8f5ec; color: #1e7b43; }  /* 배송완료 */
+
+.cm-new {
+  animation: cm-flash 0.9s ease;
+}
+
+@keyframes cm-flash {
+  0% { background: #e8f0fe; }
+  100% { background: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cm-new,
+  .cm-live-dot,
+  .cm-badge-hot {
+    animation: none;
+  }
+}
